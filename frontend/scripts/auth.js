@@ -57,7 +57,7 @@ async function loadUserProfile() {
       .from("profiles")
       .select("*")
       .eq("id", currentUser.id)
-      .single();
+      .maybeSingle();
 
     if (error) throw error;
     if (!profile) return;

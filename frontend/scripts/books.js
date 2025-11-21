@@ -226,7 +226,7 @@ async function displayBooks(books) {
 
   container.innerHTML = books
     .map((book) => {
-      const imageArr = JSON.parse(book.image_url);
+      const imageArr = book.image_urls || [];
       const img =
         (imageArr.length > 0 && imageArr[0]) ||
         "https://placehold.co/300x400/f0f0f0/888?text=No+Image";
